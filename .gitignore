@@ -1,0 +1,5 @@
+.env
+.tmp-tests/
+transcripts/
+__pycache__/
+tests/__pycache__/

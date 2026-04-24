@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: laser-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python web_frontend.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CHATBOT_HOST
+        value: 0.0.0.0
+      - key: OPENAI_MODEL
+        value: gpt-5.4-mini
+      - key: OPENAI_REASONING_EFFORT
+        value: medium
+      - key: CHATBOT_STREAM
+        value: "false"
+      - key: CHATBOT_STORE
+        value: "true"
